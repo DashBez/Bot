@@ -4,3 +4,5 @@ def get_summ(one,two,delimiter='&'):
 
 
 print(get_summ('Learn','Python'))
+print(get_summ(1,2))
+
