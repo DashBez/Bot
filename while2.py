@@ -15,11 +15,20 @@
     
 """
 
-def ask_user():
+def ask_user_dict():
     """
     Замените pass на ваш код
     """
-    pass
+    chat = [{'Вопрос': 'как дела?', 'Ответ': 'хорошо!'},{'Вопрос': 'что делаешь?', 'Ответ': 'программирую'}]
+    print('Задай мне вопрос:')
+    question = input()
+    for talk in chat:
+        while question in talk['Вопрос']:
+            print(talk['Ответ'])
+            question = input()
+
+    
+ 
     
 if __name__ == "__main__":
-    ask_user()
+    print(ask_user_dict())
