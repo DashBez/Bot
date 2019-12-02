@@ -15,12 +15,16 @@ def ask_user():
     """
     print('Как дела?')
     talk = input()
-    while talk != 'Хорошо':
-        print('Как дела?')
-        talk = input()
-
+    while True:   
+        if talk == 'Хорошо':
+            break
+        else:
+            print('Как дела?')
+            talk = input()
+        
+    
     
 if __name__ == "__main__":
-    print(ask_user())
+    ask_user()
 
 
