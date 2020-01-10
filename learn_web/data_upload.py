@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup 
+from time import sleep
+import re
 
 
 def get_html(url):
@@ -29,36 +31,35 @@ def get_href_goods(url,name_block,key_dict,value_dict):
     return result_href
 
 def get_info_goods(url,name_block,key_dict,value_dict):
+    time_to_sleep_when_captcha = 5
     html = get_html(url)
     result_info = []
+    
+
     if html:
         soup=BeautifulSoup(html,'html.parser')
-        news_list = soup(name_block, { key_dict: value_dict})
-        for news in news_list:
-            part_of_Marka_tmp = news.find_all('div', class_='col-7 col-sm-12 d-flex align-items-stretch gap')
-            part_of_Size_tmp = news.find('p',class_= 'col-7 col-sm-12')
-            part_of_Condition_tmp = news.find_all('div',class_='col-7 col-sm-12')
 
-            for test_i in part_of_Marka_tmp:
-                part_of_Marka = test_i.find('a').text
-                result_info.append ({
-                   # 'html':news,
-                    'Marka': str(part_of_Marka).replace('\n','').replace(' ','')
+        try:
+            part_of_Marka_tmp = soup.find(name_block, { key_dict: value_dict}).find('div', class_='col-7 col-sm-12 d-flex align-items-stretch gap').find('a').text
+            part_of_Size_tmp =  soup.find(name_block, { key_dict: value_dict}).find('p',class_= 'col-7 col-sm-12').text
+            part_of_Condition_tmp = soup.find(name_block, { key_dict: value_dict}).find('div',class_='col-7 col-sm-12').find('p').text
+            part_of_Description_tmp = soup.find(name_block, { key_dict: value_dict}).find("ul", {"id":"product-description"})
+
+            result_info.append ({
+                'Marka': " ".join(part_of_Marka_tmp.split()),
+                'Size': " ".join(part_of_Size_tmp.split()),
+                'Condition': " ".join(part_of_Condition_tmp.split()),
+                'Description': part_of_Description_tmp
+               # 'test': re.findall(part_of_Description_tmp))
+ 
                 })
+        except:
+                sleep(time_to_sleep_when_captcha)
+                time_to_sleep_when_captcha += 1
 
-            for test_i in part_of_Size_tmp:
-                part_of_Size = test_i
-                result_info.append ({
-                    'Size': str(part_of_Size).replace('\n','').replace(' ','')
-                })     
 
-            for test_i in part_of_Condition_tmp:
-                part_of_Condition = test_i.find('p').text
-                result_info.append ({
-                    'Condition': str(part_of_Condition).replace('\n','').replace(' ','')
-                })                
-        
 
+    
     return result_info
 
 if __name__ == "__main__":    
