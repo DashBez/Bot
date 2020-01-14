@@ -3,3 +3,11 @@ passwords.txt
 Settings.py
 .directory
 __pycache__
+Lesson3
+learn_web/env/
+learn_web/forweb/
+delete.py
+server.py
+test.py
+test_1.py
+weather.py
