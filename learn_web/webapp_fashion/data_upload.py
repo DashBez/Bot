@@ -61,23 +61,26 @@ def get_info_goods():
                                 'Marka': " ".join(part_of_Marka_tmp.split()),
                                 'Size': " ".join(part_of_Size_tmp.split()),
                                 'Condition': " ".join(part_of_Condition_tmp.split()),
-                                'Description': part_of_Description_tmp,
+                                'Description': str(part_of_Description_tmp),
                                 'Price': " ".join(part_of_price_tmp.split()),
-                                'Seller': part_of_seller_tmp,
-                                'Image': part_of_image_tmp
+                                'Seller': str(part_of_seller_tmp),
+                                'Image': str(part_of_image_tmp)
                                 #'whole part': soup.find(name_block, { key_dict: value_dict})
                 
                                 })
             except:
                 sleep(time_to_sleep_when_captcha)
                 time_to_sleep_when_captcha += 1
+            for result in result_info:
+                save_news(result['Marka'],result['Size'],result['Condition'],result['Description'],result['Price'],
+                result['Seller'],result['Image'])
             #return result_info
         #return False
 
 
 def save_news(Marka,Size,Condition,Description,Price,Seller,Image):
     news_exists = News.query.filter(News.Image == Image).count()
-    print(news_exists)
+    #print(news_exists)
     if not news_exists:
         news_news = News(Marka=Marka,Size=Size,Condition=Condition,Description=Description,Price=Price,Seller=Seller,Image=Image)
         db.session.add(news_news)
