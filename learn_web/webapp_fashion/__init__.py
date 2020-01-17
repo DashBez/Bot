@@ -14,7 +14,7 @@ def create_app():
 
     def index():
         title = 'Info Goods' 
-        news_list = News.query.all()
+        result_info = News.query.all()
         #get_info_goods()               
-        return render_template('index.html',page_title=title,news_list=news_list)
+        return render_template('index.html',page_title=title,result_info=result_info)
     return  app
