@@ -19,6 +19,9 @@ learn_web/webapp/
 href_info.
 learn_web/webapp_fashion/__init__.py
 learn_web/webapp_fashion/templates/index.html
+learn_web/href_info.txt
+learn_web/requirements.txt
+
 
        
 
