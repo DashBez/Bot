@@ -10,3 +10,4 @@ Lesson3+
 learn_web/__pycache__/
 learn_web/env/
 learn_web/forweb/
+learn_web/webapp/model.py
