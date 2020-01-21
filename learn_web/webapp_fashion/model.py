@@ -12,7 +12,6 @@ class News(db.Model):
     Price = db.Column(db.String, nullable=False)
     Seller = db.Column(db.String, nullable=False)
     Image = db.Column(db.String, nullable=False)
-    Counter = db.Column(db.Integer, nullable=False)
     
     
 

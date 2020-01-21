@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-3">
           {% for result in result_info %}
-          {% if result.Counter % 4 == 0 %}
+          {% if result.id % 4 == 0 %}
           <div class="card" style="width: 18rem;">
             <img src="{{ result.Image }}"class="card-img-top" alt="...">
             <div class="card-body">
@@ -34,7 +34,7 @@
 
         <div class="col-3">
             {% for result in result_info %}
-            {% if result.Counter % 4 == 1 %}
+            {% if result.id % 4 == 1 %}
             <div class="card" style="width: 18rem;">
               <img src="{{ result.Image }}"class="card-img-top" alt="...">
               <div class="card-body">
@@ -51,7 +51,7 @@
 
          <div class="col-3">
             {% for result in result_info %}
-            {% if result.Counter % 4 == 2 %}
+            {% if result.id % 4 == 2 %}
             <div class="card" style="width: 18rem;">
               <img src="{{ result.Image }}"class="card-img-top" alt="...">
               <div class="card-body">
@@ -68,11 +68,11 @@
 
          <div class="col-3">
             {% for result in result_info %}
-            {% if result.Counter % 4 == 3 %}
+            {% if result.id % 4 == 3 %}
             <div class="card" style="width: 18rem;">
               <img src="{{ result.Image }}"class="card-img-top" alt="...">
               <div class="card-body">
-                  <h5 class="card-title">{{ result.Name }}</h5>
+                  <h5 class="card-title">{{ result.Name }}|</h5>
                   <p class="card-text">{{ result.Marka }}</p>
                   <p class="card-text">{{ result.Size }}</p>
                 <a href="#" class="btn btn-primary">{{ result.Price }}</a>

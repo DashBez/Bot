@@ -33,7 +33,6 @@ def get_href_goods(url,name_block,key_dict,value_dict):
 
 def get_info_goods():
     time_to_sleep_when_captcha = 5
-    Counter = 0
     Goods_info = get_href_goods("https://www.maedchenflohmarkt.de/alle-ansehen.html",'a','class','product-image orientation-portrait')
     for Goods in Goods_info:
     
@@ -41,7 +40,6 @@ def get_info_goods():
         name_block = 'div'
         key_dict = 'id'
         value_dict = 'product-detail'
-        Counter = Counter +1 
         html = get_html(url)
         result_info = []
         
@@ -68,8 +66,7 @@ def get_info_goods():
                                 'Description': str(part_of_Description_tmp),
                                 'Price': " ".join(part_of_price_tmp.split()),
                                 'Seller': str(part_of_seller_tmp),
-                                'Image': str(part_of_image_tmp),
-                                'Counter': Counter
+                                 'Image': str(part_of_image_tmp)
                                 #'whole part': soup.find(name_block, { key_dict: value_dict})
                 
                                 })
@@ -78,45 +75,20 @@ def get_info_goods():
                 time_to_sleep_when_captcha += 1
             for result in result_info:
                 save_news(result['Name'],result['Marka'],result['Size'],result['Condition'],result['Description'],result['Price'],
-                result['Seller'],result['Image'],result['Counter'])
+                result['Seller'],result['Image'])
             #return result_info
         #return False
 
 
-def save_news(Name,Marka,Size,Condition,Description,Price,Seller,Image,Counter):
+def save_news(Name,Marka,Size,Condition,Description,Price,Seller,Image):
     news_exists = News.query.filter(News.Image == Image).count()
     #print(news_exists)
     if not news_exists:
-        news_news = News(Name=Name,Marka=Marka,Size=Size,Condition=Condition,Description=Description,Price=Price,Seller=Seller,Image=Image,Counter=Counter)
+        news_news = News(Name=Name,Marka=Marka,Size=Size,Condition=Condition,Description=Description,Price=Price,Seller=Seller,Image=Image)
         db.session.add(news_news)
         db.session.commit()
 
     #print(get_info_goods())
-"""
-if __name__ == "__main__":
-    href_info = get_info_goods()
 
-    for info in href_info:
-        with open("href_info.txt",'w',encoding='utf8') as f:
-            f.write(str(info))
-    
-"""
-
-#print(get_info_goods())
-
-"""
-
-if __name__ == "__main__":    
-    Goods_info = get_href_goods("https://www.maedchenflohmarkt.de/alle-ansehen.html",'a','class','product-image orientation-portrait')
-    for Goods in Goods_info:
-        #href_info = get_info_goods("https://www.maedchenflohmarkt.de"+Goods['href'],'div','class','product__attributes card card-body gap')
-        href_info = get_info_goods("https://www.maedchenflohmarkt.de"+Goods['href'],'div','id','product-detail')
-        for info in href_info:
-            with open("href_info.txt",'w',encoding='utf8') as f:
-                f.write(str(info))
-"""
- 
-
-    
 
         
