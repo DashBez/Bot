@@ -14,18 +14,73 @@
     <div class="container">
     <h1>{{ page_title }}</h1> 
     <div class="row">
-      <div class="col-8">
-          <h2>Новости</h2>
+      <div class="col-3">
           {% for result in result_info %}
-             <h3><a href ="{{ result.Marka }}">{{ result.Price }}</a> </h3>
-             <p>{{ result.Condition }}</p>
+          {% if result.Counter % 4 == 0 %}
+          <div class="card" style="width: 18rem;">
+            <img src="{{ result.Image }}"class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ result.Name }}</h5>
+              
+              <p class="card-text">{{ result.Description }}</p>
+              <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+            </div>
+          </div> 
+          {% endif %}
           {% endfor %}
           <hr/>
-        </div>
-        <div class="col-4">
+       </div>
 
-      </div>
-    </div>
+
+        <div class="col-3">
+            {% for result in result_info %}
+            {% if result.Counter % 4 == 1 %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{ result.Image }}"class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ result.Marka }}</h5>
+                <p class="card-text">{{ result.Description }}</p>
+                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+              </div>
+            </div> 
+            {% endif %}
+            {% endfor %}
+            <hr/>
+         </div>
+
+         <div class="col-3">
+            {% for result in result_info %}
+            {% if result.Counter % 4 == 2 %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{ result.Image }}"class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ result.Marka }}</h5>
+                <p class="card-text">{{ result.Description }}</p>
+                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+              </div>
+            </div> 
+            {% endif %}
+            {% endfor %}
+            <hr/>
+         </div>
+
+         <div class="col-3">
+            {% for result in result_info %}
+            {% if result.Counter % 4 == 3 %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{ result.Image }}"class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ result.Marka }}</h5>
+                <p class="card-text">{{ result.Description }}</p>
+                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+              </div>
+            </div> 
+            {% endif %}
+            {% endfor %}
+            <hr/>
+         </div>
+
+     </div>
    </div> 
 
     <!-- Optional JavaScript -->

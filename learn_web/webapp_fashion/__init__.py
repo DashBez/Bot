@@ -11,9 +11,9 @@ def create_app():
     db.init_app(app)
     
 
-
+    @app.route('/') 
     def index():
-        title = 'Info Goods' 
+        title = 'Магазин' 
         result_info = News.query.all()
         #get_info_goods()               
         return render_template('index.html',page_title=title,result_info=result_info)

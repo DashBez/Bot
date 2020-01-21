@@ -4,13 +4,15 @@ db = SQLAlchemy()
 
 class News(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    Name = db.Column(db.String, nullable=False)
     Marka = db.Column(db.String, nullable=False)
     Size = db.Column(db.Integer, nullable=False)
     Condition = db.Column(db.String, nullable=False)
     Description = db.Column(db.String, nullable=False)
     Price = db.Column(db.String, nullable=False)
     Seller = db.Column(db.String, nullable=False)
-    Image = db.Column(db.String,unique=True, nullable=False)
+    Image = db.Column(db.String, nullable=False)
+    Counter = db.Column(db.Integer, nullable=False)
     
     
 

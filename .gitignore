@@ -15,11 +15,13 @@ Lesson2/
 learn_web/data_upload.py
 learn_web/downloads_info_goods.py
 learn_web/webapp.db
+learn_web/webapp_fashion.db
 learn_web/webapp/
 href_info.
 learn_web/webapp_fashion/__init__.py
 learn_web/webapp_fashion/templates/index.html
 learn_web/href_info.txt
+
 learn_web/requirements.txt
 
 
