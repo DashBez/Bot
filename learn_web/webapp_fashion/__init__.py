@@ -3,7 +3,6 @@ from flask import Flask,render_template
 from webapp_fashion.model import db,News
 
 
-
 def create_app():
 
     app = Flask(__name__)
@@ -18,3 +17,12 @@ def create_app():
         #get_info_goods()               
         return render_template('index.html',page_title=title,result_info=result_info)
     return  app
+
+   # def Cut_name():
+        # if len(Name)>40:
+            # Name = Name[0:40]
+
+    #    return "Name"
+        # return render_template('index.html',clever_function=clever_function)
+   
+    #app.jinja_env.globals.update(Cut_name=Cut_name) 
