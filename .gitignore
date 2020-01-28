@@ -10,3 +10,10 @@ Lesson3+
 learn_web/__pycache__/
 learn_web/env/
 learn_web/forweb/
+learn_web/webapp/model.py
+learn_web/webapp.db
+Lesson3
+webapp.db
+downloads_info_goods.py
+learn_web/downloads_info_goods.py
+webapp/.vscode/
