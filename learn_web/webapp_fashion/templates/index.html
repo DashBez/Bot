@@ -1,95 +1,362 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
-    <title>{{ page_title }}</title>
-  </head>
-  <body>
-    <div class="container">
-    <h1>{{ page_title }}</h1> 
-    <div class="row">
-      <div class="col-3">
-          {% for result in result_info %}
-          {% if result.id % 4 == 0 %}
-          <div class="card" style="width: 18rem;">
-            <img src="{{ result.Image }}"class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
-              <p class="card-text">{{ result.Marka }}</p>
-              <p class="card-text">{{ result.Size }}</p>
-              <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="static/css_image/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css_image/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="cstatic/css_image/style.css">
+  
+  <!-- =======================================================
+    Theme Name: Delicious
+    Theme URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!--banner-->
+  <section id="banner">
+    <div class="bg-color">
+      <header id="header">
+          <div class="container">
+              <div class="row">
+              <div class="col text-center">
+              <div class="col-md-12 text-center marb-100">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Sichere Zahlungs- und Versandabwicklung </a>
+                <a class="navbar-brand" href="#">100% Geld-zurück-Garantie  </a>
+                <a class="navbar-brand" href="#">Datenschutz </a>
+                <a class="navbar-brand" href="#">Kontakt </a>
+                <a class="navbar-brand" href="#">Hilfe</a>
+                </nav>
+              </div>
             </div>
-          </div> 
-          {% endif %}
-          {% endfor %}
-          <hr/>
-       </div>
+          </div>
+        </div>
 
 
-        <div class="col-3">
-            {% for result in result_info %}
-            {% if result.id % 4 == 1 %}
-            <div class="card" style="width: 18rem;">
-              <img src="{{ result.Image }}"class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
-                  <p class="card-text">{{ result.Marka }}</p>
-                  <p class="card-text">{{ result.Size }}</p>
-                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
-              </div>
+
+      </header>
+      <nav class="container header-main__nav">
+        <div class="row">
+          <div class="col text-center">
+            <a href="https://www.maedchenflohmarkt.de/"
+                data-ga-track-click="[{&quot;_one&quot;:false,&quot;category&quot;:&quot;Logo&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;GoToHomepage&quot;}]" >
+                  <img src="static/css_image/logo.png" 
+                 class="img-fluid" width="250" height="130">
+             </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / banner -->
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center marb-35">
+          <h1 class="header-h"> </h1>
+          <p class="header-p">Mädchenflohmarkt – Marktplatz für hochwertige Second Hand Designermode
+                              Mädchenflohmarkt ist der Marktplatz für hochwertige Second Hand Designermode und Vintage-Fashion.
+                              Über eine halbe Million Mitglieder kaufen und verkaufen seit Mitte 2012 Kleidung, 
+                              Schuhe, Taschen und Accessoires von klassischen Designern bis zu den angesagtesten Trendmarken. 
+                              So finden sich täglich Tausende neue Artikel von Louis Vuitton, Prada, Gucci, Chanel über Romwe, Asos, 
+                              Primark, Amisu bis hin zu H&M, Zara und vielen mehr bei uns. 
+                              Unsere Verkäuferinnen haben so die Möglichkeit, ihre Kleiderschränke zu leeren, 
+                              Platz für neue Kleidung zu schaffen und Geld zu verdienen für neue Mode. 
+                              Unter den Verkäufern finden sich von bekannten Mode-Bloggerinnen über Stars aus den Medien bis hin 
+                              zur begeisterten Fashionista die gesamte Bandbreite an Mode Liebhaberinnen. 
+                              Käufern bietet sich durch die Vielfalt des Marktplatzes ein Paradies zum günstigen 
+                              Einkaufen von Designermode und Trendmarken, von Klassikern bis hin zur aktuellen Kollektion.  </p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+          <div class="col-md-6 col-sm-6">
+            <div class="about-info">
+              <div class="col-md-12 col-sm-6">
+                <img src="static/css_image/valentinstag-28c36.jpg" alt="" class="img-responsive">
             </div> 
-            {% endif %}
-            {% endfor %}
-            <hr/>
-         </div>
 
-         <div class="col-3">
-            {% for result in result_info %}
-            {% if result.id % 4 == 2 %}
-            <div class="card" style="width: 18rem;">
-              <img src="{{ result.Image }}"class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
-                  <p class="card-text">{{ result.Marka }}</p>
-                  <p class="card-text">{{ result.Size }}</p>
-                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+        </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="about-info">
+
+              <div class="col-md-12 col-sm-12">
+                  <img src="static/css_image/verkaufen-72d93.jpg" alt="" class="img-responsive">
+                </div>
+        </div>
+      </div>
+        
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </section>
+  <!--/about-->
+  <!-- event -->
+  <section id="event">
+    <div class="bg-color" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center" style="padding:60px;">
+            <h1 class="header-h">Up Coming events</h1>
+            <p class="header-p">Decorations 100% complete here</p>
+          </div>
+          <div class="col-md-12" style="padding-bottom:60px;">
+            <div class="item active left">
+              <div class="col-md-6 col-sm-6 left-images">
+                <img src="static/css_image/teaser_sell.jpg" class="img-responsive">
               </div>
-            </div> 
-            {% endif %}
-            {% endfor %}
-            <hr/>
-         </div>
-
-         <div class="col-3">
-            {% for result in result_info %}
-            {% if result.id % 4 == 3 %}
-            <div class="card" style="width: 18rem;">
-              <img src="{{ result.Image }}"class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}|</h5>
-                  <p class="card-text">{{ result.Marka }}</p>
-                  <p class="card-text">{{ result.Size }}</p>
-                <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+              <div class="col-md-6 col-sm-6 details-text">
+                <div class="content-holder">
+                  <h2>Joyful party</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eos suscipit earum voluptas aliquam recusandae, quae iure adipisci, inventore quia, quos delectus quaerat praesentium id expedita nihil illo accusantium, tempora.</p>
+                  <address>
+                              <strong>Place: </strong>
+                              1612 Collins Str, Victoria 8007
+                              <br>
+                              <strong>Time: </strong>
+                              07:30pm
+                            </address>
+                  <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+                </div>
               </div>
-            </div> 
-            {% endif %}
-            {% endfor %}
-            <hr/>
-         </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ event -->
+  <!-- menu -->
+  <section id="menu-list" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center marb-35">
+          <h1 class="header-h">Shop</h1>
+          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+        </div>
 
-     </div>
-   </div> 
+        
+        <div class="container">
+            
+            <div class="row">
+              <div class="col-md-3 col-sm-3">
+                  {% for result in result_info %}
+                  {% if result.id % 4 == 0 %}
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ result.Image }}"width="300" height="300">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ result.Name | truncate(20) | safe }}</h5>
+                      <p class="card-text">{{ result.Marka }}</p>
+                      <p class="card-text">{{ result.Size }}</p>
+                      <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+        
+                    </div>
+                  </div> 
+                  {% endif %}
+                  {% endfor %}
+                  <hr/>
+               </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+               <div class="col-md-3 col-sm-3">
+                  {% for result in result_info %}
+                  {% if result.id % 4 == 1 %}
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ result.Image }}"width="300" height="300">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
+                      <p class="card-text">{{ result.Marka }}</p>
+                      <p class="card-text">{{ result.Size }}</p>
+                      <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+        
+                    </div>
+                  </div> 
+                  {% endif %}
+                  {% endfor %}
+                  <hr/>
+               </div>
+
+               <div class="col-md-3 col-sm-3">
+                  {% for result in result_info %}
+                  {% if result.id % 4 == 2 %}
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ result.Image }}" width="300" height="300"> 
+                    <div class="card-body">
+                      <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
+                      <p class="card-text">{{ result.Marka }}</p>
+                      <p class="card-text">{{ result.Size }}</p>
+                      <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+        
+                    </div>
+                  </div> 
+                  {% endif %}
+                  {% endfor %}
+                  <hr/>
+               </div>
+
+               <div class="col-md-3 col-sm-3">
+                  {% for result in result_info %}
+                  {% if result.id % 4 == 3 %}
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ result.Image }}" width="300" height="300">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ result.Name | truncate(20) | safe  }}</h5>
+                      <p class="card-text">{{ result.Marka }}</p>
+                      <p class="card-text">{{ result.Size }}</p>
+                      <a href="#" class="btn btn-primary">{{ result.Price }}</a>
+        
+                    </div>
+                  </div> 
+                  {% endif %}
+                  {% endfor %}
+                  <hr/>
+               </div>
+              </div>
+  </section>
+  <!--/ menu -->
+  <!-- contact -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="header-h">Book Your table</h1>
+          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+        </div>
+      </div>
+      <div class="row msg-row">
+        <div class="col-md-4 col-sm-4 mr-15">
+          <div class="media-2">
+            <div class="media-left">
+              <div class="contact-phone bg-1 text-center"><span class="phone-in-talk fa fa-phone"></span></div>
+            </div>
+            <div class="media-body">
+              <h4 class="dark-blue regular">Phone Numbers</h4>
+              <p class="light-blue regular alt-p">+440 875369208 - <span class="contacts-sp">Phone Booking</span></p>
+            </div>
+          </div>
+          <div class="media-2">
+            <div class="media-left">
+              <div class="contact-email bg-14 text-center"><span class="hour-icon fa fa-clock-o"></span></div>
+            </div>
+            <div class="media-body">
+              <h4 class="dark-blue regular">Opening Hours</h4>
+              <p class="light-blue regular alt-p"> Monday to Friday 09.00 - 24:00</p>
+              <p class="light-blue regular alt-p">
+                Friday and Sunday 08:00 - 03.00
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8">
+          <form action="" method="post" role="form" class="contactForm">
+            <div id="sendmessage">Your booking request has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <div class="col-md-6 col-sm-6 contact-form pad-form">
+              <div class="form-group label-floating is-empty">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="date" class="form-control label-floating is-empty" name="date" id="date" placeholder="Date" data-rule="required" data-msg="This field is required" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form pad-form">
+              <div class="form-group">
+                <input type="email" class="form-control label-floating is-empty" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="time" class="form-control label-floating is-empty" name="time" id="time" placeholder="Time" data-rule="required" data-msg="This field is required" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" class="form-control label-floating is-empty" name="phone" id="phone" placeholder="Phone" data-rule="required" data-msg="This field is required" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" class="form-control label-floating is-empty" name="people" id="people" placeholder="People" data-rule="required" data-msg="This field is required" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-12 contact-form">
+              <div class="form-group label-floating is-empty">
+                <textarea class="form-control" name="message" rows="5" rows="3" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+
+            </div>
+            <div class="col-md-12 btnpad">
+              <div class="contacts-btn-pad">
+                <button class="contacts-btn">Book Table</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / contact -->
+  <!-- footer -->
+  <footer class="footer text-center">
+    <div class="footer-top">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 text-center">
+          <div class="widget">
+            <h4 class="widget-title">Delicious</h4>
+            <address>324 Ellte Road<br>Delhi, DL 110013</address>
+            <div class="social-list">
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </div>
+            <p class="copyright clear-float">
+              © Delicious Theme. All Rights Reserved
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Delicious
+                -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- / footer -->
+
+  <script src="static/css_image/jquery.min.js"></script>
+  <script src="static/css_image/jquery.easing.min.js"></script>
+  <script src="static/css_image/bootstrap.min.js"></script>
+  <script src="static/css_image/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
 </html>

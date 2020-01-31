@@ -6,10 +6,13 @@ from webapp_fashion.forms import LoginForm
 
 
 def create_app():
-
-    app = Flask(__name__)
+    app = Flask(__name__,
+            static_folder='static',
+            template_folder='templates')
+    #app = Flask(__name__)
     app.config.from_pyfile('config.py')
     db.init_app(app)
+    
     
     login_manager = LoginManager()
     login_manager.init_app(app)
@@ -25,8 +28,13 @@ def create_app():
         result_info = News.query.all()
         #get_info_goods()               
         return render_template('index.html',page_title=title,result_info=result_info)
-
-
+    """
+    @app.route('/item/1') 
+    def index():
+        result_info = News.query.all()
+        #get_info_goods()               
+        return render_template('index.html',page_title=title,result_info=result_info)
+    """
     @app.route('/login')
     def login():
         if current_user.is_authenticated:
